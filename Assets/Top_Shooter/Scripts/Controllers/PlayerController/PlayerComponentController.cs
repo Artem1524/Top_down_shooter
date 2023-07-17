@@ -16,7 +16,7 @@ namespace TDShooter.Controllers
 
         protected bool GetIsIdle()
         {
-            return (!_controlsMgr.IsMoving && !_controlsMgr.IsShooting);
+            return (!_controlsMgr.IsMoving/* && !_controlsMgr.IsShooting*/);
         }
 
         protected Animator GetAnimator()
