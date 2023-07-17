@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bat_AvatarMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Mesh
+    m_Weight: 0
+  - m_Path: RIG
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl/lWingControl
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl/lWingControl/lWingControl
+      1
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl/lWingControl/lWingControl
+      1/lWingTail
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl/lWingControl/lWingControl2
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl/lWingControl/lWingControl2/lWingControl2
+      1
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl/lWingControl/lWingControl2/lWingControl2
+      1/lWingTail2
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl/lWingControl/lWingControl2/lWingControl3
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl/lWingControl/lWingControl2/lWingControl3/lWingControl4
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl/lWingControl/lWingControl2/lWingControl9
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl/lWingControl/lWingControl2/lWingControl9/lWingTail3
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl1
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl1/lWingControl5
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl1/lWingControl5/lWingControl6
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl1/lWingControl5/lWingControl6/lWingControl7
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl1/lWingControl5/lWingControl6/lWingControl7/lWingControl8
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl1/lWingControl5/lWingControl6/rWingTailControl2
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl1/lWingControl5/lWingControl6/rWingTailControl2/rWingTair2
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl1/lWingControl5/lWingControl6/rWingTailControl3
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl1/lWingControl5/lWingControl6/rWingTailControl3/rWingTair3
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl1/lWingControl5/rWingTailControl
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/HeadControl/lWingRootControl1/lWingControl5/rWingTailControl/rWingTair
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/NoseControl
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/HeadJoint
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/HeadJoint/lWingRoot
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/HeadJoint/lWingRoot/lWing
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/HeadJoint/lWingRoot/lWing/lWing2
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/HeadJoint/lWingRoot/lWing/lWing2/lWing3
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/HeadJoint/lWingRoot/lWing/lWing2/lWing3/lWing4
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/HeadJoint/lWingRoot/lWing/lWing2/lWing3/lWing4/lWing5
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/HeadJoint/rWingRoot
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/HeadJoint/rWingRoot/rWing
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/HeadJoint/rWingRoot/rWing/rWing2
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/HeadJoint/rWingRoot/rWing/rWing2/rWing3
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/HeadJoint/rWingRoot/rWing/rWing2/rWing3/rWing4
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/HeadJoint/rWingRoot/rWing/rWing2/rWing3/rWing4/rWing5
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/NoseJoint
+    m_Weight: 0
+  - m_Path: RIG/Bat1Control/RootJoint/NoseJoint/NoseTipJoint
+    m_Weight: 0
