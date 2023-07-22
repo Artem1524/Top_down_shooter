@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc9a130dc3d37046ad9324f69970ddf, type: 3}
+  m_Name: RifleUpgradeConfiguration
+  m_EditorClassIdentifier: 
+  _weaponType: 0
+  _stats:
+  - FireRate: 5
+    Range: 12
+    BulletsNumberInShot: 1
+    Damage: 6
+    BulletSpeed: 12.5
+    BulletSpreadAngle: 15
+    DelayBeforeFirstShot: 0.01
+    UpgradeCost: 0
+  - FireRate: 7
+    Range: 12
+    BulletsNumberInShot: 1
+    Damage: 6
+    BulletSpeed: 12.5
+    BulletSpreadAngle: 13.5
+    DelayBeforeFirstShot: 0.01
+    UpgradeCost: 50
+  - FireRate: 8
+    Range: 12
+    BulletsNumberInShot: 1
+    Damage: 7
+    BulletSpeed: 12.5
+    BulletSpreadAngle: 12
+    DelayBeforeFirstShot: 0.01
+    UpgradeCost: 100
+  - FireRate: 10
+    Range: 12
+    BulletsNumberInShot: 2
+    Damage: 4
+    BulletSpeed: 12.5
+    BulletSpreadAngle: 11.25
+    DelayBeforeFirstShot: 0.01
+    UpgradeCost: 250
