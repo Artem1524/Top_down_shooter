@@ -19,10 +19,10 @@ namespace TDShooter.Managers
 
         private void OnEnable()
         {
-            if (Self is null)
-            {
+            //if (Self is null)
+            //{
                 Self = this;
-            }
+            //}
 
             Self._picklockGameUI = FindObjectOfType<PicklockGameUI>(true);
             DebugUtility.HandleErrorIfNullFindObject<PicklockGameUI, GameManager>(Self._picklockGameUI, this);

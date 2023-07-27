@@ -38,12 +38,10 @@ namespace TDShooter.Managers
 
         private void OnEnable()
         {
-            DontDestroyOnLoad(this);
-
-            if (Self is null)
-            {
+            //if (Self is null)
+            //{
                 Self = this;
-            }
+            //}
 
             LoadWeaponConfigurations(PATH_TO_WEAPON_UPGRADE_CONFIGURATIONS);
             OnSwitchingWeapon += OnWeaponSwitched; // fix (возможно дополнительно ещё раз подписывается на событие при загрузке новой сцены)
@@ -57,7 +55,7 @@ namespace TDShooter.Managers
 
         private void InitializeWeapons()
         {
-            _weaponsByType.Clear(); // fix
+            _weaponsByType.Clear(); // fix //_weapons.Clear() _weaponsByType 3 Clear
             _weaponBulletSpawners.Clear(); // fix
 
             foreach (WeaponShooter prefab in _weapons)
@@ -145,7 +143,7 @@ namespace TDShooter.Managers
 
         private void InitializeWeaponTransformations(WeaponShooter weapon)
         {
-            weapon.transform.parent = _weaponParentSlot?.transform;
+            weapon.transform.parent = _weaponParentSlot?.transform; // Очищать словари
 
             weapon.transform.localPosition = Vector3.zero;
             weapon.transform.localRotation = ZERO_ROTATION;

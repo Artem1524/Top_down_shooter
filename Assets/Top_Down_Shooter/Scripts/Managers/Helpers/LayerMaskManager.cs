@@ -29,12 +29,12 @@ namespace TDShooter.Managers
         public static LayerMask ProjectileLayer => Self._projectile;
         public static LayerMask PickupLayer => Self._pickup;
 
-        private void Awake()
+        private void OnEnable()
         {
-            if (Self is null)
-            {
+            //if (Self is)
+            //{
                 Self = this;
-            }
+            //}
         }
 
         public static bool IsLayerExistsInLayerMask(int layer, LayerMask layerMask)

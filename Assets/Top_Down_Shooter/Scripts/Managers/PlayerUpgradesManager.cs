@@ -21,10 +21,10 @@ namespace TDShooter.Managers
 
         private void OnEnable()
         {
-            if (Self is null)
-            {
+            //if (Self is null)
+            //{
                 Self = this;
-            }
+            //}
 
             OnChangeMoney += MoneyChanged;
         }

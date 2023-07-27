@@ -40,7 +40,7 @@ MonoBehaviour:
     UpgradeCost: 100
   - FireRate: 10
     Range: 12
-    BulletsNumberInShot: 2
+    BulletsNumberInShot: 1
     Damage: 4
     BulletSpeed: 12.5
     BulletSpreadAngle: 11.25

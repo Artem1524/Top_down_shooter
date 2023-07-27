@@ -17,11 +17,11 @@ namespace TDShooter.Managers
 
         private void OnEnable()
         {
-            if (Self is null)
-            {
+            //if (Self is null)
+            //{
                 Self = this;
                 // _currentLevel = SettingsManager.GetCurrentLevel();
-            }
+            //}
         }
 
         public static void LoadShopLevel()

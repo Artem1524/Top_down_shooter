@@ -13,10 +13,10 @@ namespace TDShooter.Helpers
 
         private void OnEnable()
         {
-            if (Self is null)
-            {
+            //if (Self is null)
+            //{
                 Self = this;
-            }
+            //}
         }
 
         public static Transform GetBulletPool()

@@ -8,17 +8,22 @@ namespace TDShooter.Controllers
 {
     public class EnemyAttackController : MonoBehaviour
     {
+        private const string ANIMATION_EVENT_STRING_PARAM_COLLIDER = "Collider";
+        private const string ANIMATION_EVENT_END_ATTACK = "Attack";
+
         private const string ANIM_PARAM_IS_IDLE = "IsIdle";
         private const string ANIM_PARAM_ATTACK_SPEED_TIME = "AttackSpeedTime";
         private const string ANIM_TRIGGER_ON_ATTACK = "OnAttack";
-        private const float AttackAnimDuration = 1f;
+
         private Animator _animator;
+
+        private AttackCollider _attackCollider;
 
         private EnemyAttackData _enemyAttackData;
         private AIState _aiState;
 
         private EnemyMovementController _enemyMovementController;
-        //private EnemyAIData _enemyAIData;
+
         private bool _canMove;
 
         [SerializeField]
@@ -71,7 +76,13 @@ namespace TDShooter.Controllers
             TryGetComponent(out _health);
             DebugUtility.HandleErrorIfNullGetComponent<Health, EnemyAttackController>(_health, this, gameObject);
 
+            if (!IsRangedAttack)
+                InitializeMeleeAttack();
+
             _aiState = AIState.Idle;
+            _isMoving = false;
+            _isIdle = true;
+            SetAnimatorIsIdleParam(_isIdle);
         }
 
         private void Update()
@@ -90,7 +101,7 @@ namespace TDShooter.Controllers
                     if (IsTargetDetected(_attackTarget))//!_isIdle)     // Цель обнаружена
                     {
                         _aiState = AIState.Detected;
-                        OnTargetDetected(_attackTarget);
+                        //OnTargetDetected(_attackTarget);
                         FollowTarget(_attackTarget);
                     }
                     break;
@@ -147,12 +158,6 @@ namespace TDShooter.Controllers
             }
         }
 
-        private void OnTargetReachMinimumAttackRange(Transform attackTarget)
-        {
-            TurnToTarget(attackTarget);
-            SetIdleAnimationIfNeed();
-        }
-
         private void SetIdleAnimationIfNeed()
         {
             if (_isMoving)
@@ -163,6 +168,12 @@ namespace TDShooter.Controllers
             }
         }
 
+        private void OnTargetReachMinimumAttackRange(Transform attackTarget)
+        {
+            TurnToTarget(attackTarget);
+            SetIdleAnimationIfNeed();
+        }
+
         private bool IsTargetDetected(Transform attackTarget)
         {
             if (Vector3.Distance(transform.position, attackTarget.position) <= DetectionRange)
@@ -171,15 +182,10 @@ namespace TDShooter.Controllers
             return false;
         }
 
-        private void OnTargetDetected(Transform _attackTarget)
-        {
-            _isIdle = false;
-            SetAnimatorIsIdleParam(_isIdle);
-        }
-
         private void FollowTarget(Transform attackTarget)
         {
             TurnToTarget(attackTarget);
+            SetMoveAnimationIfNeed();
             MoveToTarget(attackTarget);
         }
 
@@ -193,8 +199,7 @@ namespace TDShooter.Controllers
 
         private void OnTargetLoss(Transform attackTarget)
         {
-            _isIdle = true;
-            SetAnimatorIsIdleParam(_isIdle);
+            SetIdleAnimationIfNeed();
         }
 
         private bool IsTargetInRangeOfAttack(Transform attackTarget)
@@ -254,7 +259,7 @@ namespace TDShooter.Controllers
 
         private bool IsTargetReachMinimumAttackRange(Transform attackTarget)
         {
-            if (Vector3.Distance(transform.position, attackTarget.position) < MinimumAttackRange)
+            if (Vector3.Distance(transform.position, attackTarget.position) <= MinimumAttackRange)
                 return true;
 
             return false;
@@ -271,12 +276,6 @@ namespace TDShooter.Controllers
             transform.LookAt(attackTarget, transform.up); // perf: Поворачивать персонажа только вокруг оси Y
         }
 
-        private void SetIdleAIState()
-        {
-            _aiState = AIState.Idle;
-            SetAnimatorIsIdleParam(true);
-        }
-
         private void SetAnimatorIsIdleParam(bool isIdle)
         {
             _animator.SetBool(ANIM_PARAM_IS_IDLE, isIdle);
@@ -291,6 +290,38 @@ namespace TDShooter.Controllers
             return new ShootBulletData(bulletPrefab, enemyAttackData.ProjectileData.BulletSpreadAngle,
                                        enemyAttackData.Damage, enemyAttackData.ProjectileData.BulletSpeed,
                                        enemyAttackData.ProjectileData.BulletMaxRange, collisionLayersToDestroyProjectile);
+        }
+
+        private void OnCollider_AnimationEvent(string param)
+        {
+            if (!ANIMATION_EVENT_STRING_PARAM_COLLIDER.Equals(param))
+                return;
+
+            bool isColliderEnabled = _attackCollider.ColliderActivity;
+
+            _attackCollider.ColliderActivity = !_attackCollider.ColliderActivity;
+        }
+
+        private void OnActionEnd_AnimationEvent(string param)
+        {
+            if (ANIMATION_EVENT_END_ATTACK.Equals(param))
+            {
+                _attackCollider.ColliderActivity = false;
+            }
+
+        }
+
+        private void InitializeMeleeAttack()
+        {
+            _attackCollider = GetComponentInChildren<AttackCollider>(true);
+
+            if (_attackCollider is not null)
+                _attackCollider.Initialize(this);
+        }
+
+        public float GetDamage()
+        {
+            return Damage;
         }
     }
 }
