@@ -6,9 +6,9 @@ namespace TDShooter
     [Serializable]
     public class CollectMoneyMission : Mission
     {
-        private const string MISSION_TEXT = "Набрать {0} монет";
+        private const string MISSION_TEXT = "Собрать {0} монет";
 
-        private int _moneyCountNeed = 300;
+        private int _moneyCountNeed = 500;
         private int _baseMoney = 0;
 
         public override void Initialize()

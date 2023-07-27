@@ -9,10 +9,10 @@ public class PickupCreatorHelper : MonoBehaviour
 
     private void Awake()
     {
-        if (Self is null)
-        {
+        //if (Self is null) закомментировать
+        //{
             Self = this;
-        }
+        //}
     }
 
     public static T InstantiatePickup<T>(T prefab, Vector3 position, Quaternion rotation) where T : Pickup
