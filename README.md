@@ -30,7 +30,7 @@ WASD - Перемещение
 E - Начать миниигру / Выйти из миниигры
 <br>Пробел - Действие в миниигре
 
-# Скриншоты
+## Скриншоты
 
 <img src="https://github.com/Artem1524/Top_down_shooter/blob/master/1.png"/>
 
